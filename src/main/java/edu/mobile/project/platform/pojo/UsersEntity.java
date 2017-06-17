@@ -3,27 +3,17 @@ package edu.mobile.project.platform.pojo;
 import javax.persistence.*;
 
 /**
- * Created by gutia on 2017-05-29.
+ * Created by gutia on 2017-06-17.
  */
 @Entity
 @Table(name = "Users", schema = "dbo", catalog = "AdvertisingPlatform")
 public class UsersEntity {
-    private int id;
     private String account;
     private String password;
     private String name;
     private String emailAddr;
     private String phoneNum;
-
-    @Id
-    @Column(name = "id")
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "account")
@@ -75,6 +65,16 @@ public class UsersEntity {
         this.phoneNum = phoneNum;
     }
 
+    @Id
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -94,12 +94,12 @@ public class UsersEntity {
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (account != null ? account.hashCode() : 0);
+        int result = account != null ? account.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (emailAddr != null ? emailAddr.hashCode() : 0);
         result = 31 * result + (phoneNum != null ? phoneNum.hashCode() : 0);
+        result = 31 * result + id;
         return result;
     }
 }

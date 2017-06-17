@@ -10,4 +10,5 @@ import java.util.List;
 public interface UsersDao {
     List<UsersEntity> getAllUsers();
     UsersEntity findUserByAccount(String account);
+    public boolean saveUserInfo(String account, String password, String name, String emailAddr, String phone);
 }

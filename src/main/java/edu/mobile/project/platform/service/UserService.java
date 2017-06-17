@@ -1,6 +1,7 @@
 package edu.mobile.project.platform.service;
 
 import edu.mobile.project.platform.model.BaseObjectResult;
+import edu.mobile.project.platform.model.UserStatus;
 import edu.mobile.project.platform.pojo.UsersEntity;
 
 import java.util.List;
@@ -10,5 +11,7 @@ import java.util.List;
  */
 public interface UserService {
     List<UsersEntity> getTest();
-    BaseObjectResult<String> userLogin(String acc, String pass);
+    BaseObjectResult<UserStatus> userLogin(String acc, String pass);
+    BaseObjectResult<String> userRegister(String account,  String password, String name,  String emailAddr,  String phone);
+    BaseObjectResult<String> savePurchaseInfo(String name, String address, String phone, int money, int payMethod,  int userId, int proId);
 }

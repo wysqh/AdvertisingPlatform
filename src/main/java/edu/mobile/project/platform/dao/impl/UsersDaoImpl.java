@@ -1,14 +1,12 @@
 package edu.mobile.project.platform.dao.impl;
 
-import edu.mobile.project.platform.commom.utils.QueryParameterSetter;
-import edu.mobile.project.platform.commom.utils.Sorter;
 import edu.mobile.project.platform.dao.UsersDao;
+import edu.mobile.project.platform.pojo.OrderRecordEntity;
 import edu.mobile.project.platform.pojo.UsersEntity;
 import org.hibernate.Query;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -31,5 +29,21 @@ public class UsersDaoImpl extends HibernateBaseDaoImpl<UsersEntity, Integer> imp
 //                criteria.add(Restrictions.eq("account", account));
 //            }
 //        });
+    }
+
+    public boolean saveUserInfo(String account, String password, String name, String emailAddr, String phone) {
+        UsersEntity usersEntity = new UsersEntity();
+        usersEntity.setAccount(account);
+        usersEntity.setName(name);
+        usersEntity.setPassword(password);
+        usersEntity.setEmailAddr(emailAddr);
+        usersEntity.setPhoneNum(phone);
+        try {
+            save(usersEntity);
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

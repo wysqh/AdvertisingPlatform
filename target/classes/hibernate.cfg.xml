@@ -4,10 +4,8 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-      <property name="connection.url">jdbc:sqlserver://127.0.0.1:1433;\databaseName=advertisingPlatform</property>
+      <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=advertisingPlatform</property>
       <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-      <property name="connection.username">sa</property>
-      <property name="connection.password">1234</property>
 
       <!-- 配置数据库方言dialect -->
       <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
@@ -15,8 +13,21 @@
       <property name="format_sql">true</property>
       <!-- 指定自动生成数据表的策略 -->
       <property name="hbm2ddl.auto">update</property>
+      <mapping class="edu.mobile.project.platform.pojo.OrderRecordEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.ProductsEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.UsersEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.OrderRecordEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.ProductsEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.UsersEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.OrderRecordEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.ProductsEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.UsersEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.OrderRecordEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.ProductTypeEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.ProductsEntity"/>
+      <mapping class="edu.mobile.project.platform.pojo.UsersEntity"/>
 
-    <!-- DB schema will be updated if needed -->
+      <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>

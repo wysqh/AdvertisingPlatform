@@ -9,6 +9,8 @@
     <!-- 扫描controller（controller层注入） -->
     <context:component-scan base-package="edu.mobile.project.platform.controller"/>
 
+    <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
+
     <mvc:annotation-driven />
     <!-- 对模型视图添加前后缀 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
