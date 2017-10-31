@@ -12,4 +12,5 @@ source -> http://blog.csdn.net/fly_boss/article/details/60465981
 关于如何在IntelliJ下搭建Maven环境下的Hibernate-Spring-SpringMVC框架
 
 source -> http://blog.csdn.net/noaman_wgs/article/details/70214612
+
 关于如何搭建dubbo框架
